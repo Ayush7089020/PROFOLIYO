@@ -1,0 +1,2187 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UJJWAL'S CREATIVE PORTFOLIO</title>
+  <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+<style>
+
+  
+:root {
+  --bg-light-1: #f8f8f8;
+  --bg-light-2: #ffffff;
+  --bg-light-3: #eeeeee;
+  --border-light: #e0e0e0;
+  --text-dark: #333333;
+  --text-medium: #666666;
+  --text-light: #999999;
+  --accent-color: hsl(180, 100%, 35%);
+  --accent-gradient: linear-gradient(to right, hsl(180, 100%, 72%), hsl(180, 100%, 68%));
+  --ff-roboto: 'Roboto', sans-serif;
+  --fs-1: 24px;
+  --fs-2: 18px;
+  --fs-3: 17px;
+  --fs-4: 16px;
+  --fs-5: 15px;
+  --fs-6: 14px;
+  --fs-7: 13px;
+  --fs-8: 11px;
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --shadow-1: 0 4px 12px hsla(0, 0%, 0%, 0.1);
+  --shadow-2: 0 8px 16px hsla(0, 0%, 0%, 0.15);
+  --shadow-3: 0 16px 24px hsla(0, 0%, 0%, 0.2);
+  --transition-1: 0.25s ease;
+  --transition-2: 0.5s ease-in-out;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img,
+ion-icon,
+a,
+button,
+time,
+span {
+  display: block;
+}
+
+button {
+  font: inherit;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  background: none;
+  font: inherit;
+}
+
+::selection {
+  background: var(--accent-color);
+  color: var(--bg-light-2);
+}
+
+:focus {
+  outline-color: var(--accent-color);
+}
+
+html {
+  font-family: var(--ff-roboto);
+}
+
+body {
+  background: var(--bg-light-1);
+  color: var(--text-dark);
+}
+
+.sidebar,
+article {
+  background: var(--bg-light-2);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: var(--shadow-1);
+  z-index: 1;
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background: var(--border-light);
+  margin: 16px 0;
+}
+
+.icon-box {
+  position: relative;
+  background: var(--bg-light-3);
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: var(--accent-color);
+  box-shadow: var(--shadow-1);
+  z-index: 1;
+}
+
+.icon-box::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-light-2);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.icon-box ion-icon {
+  --ionicon-stroke-width: 35px;
+}
+
+article {
+  display: none;
+}
+
+article.active {
+  display: block;
+  animation: fade 0.5s ease backwards;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.h2,
+.h3,
+.h4,
+.h5 {
+  color: var(--text-dark);
+  text-transform: capitalize;
+}
+
+.h2 {
+  font-size: var(--fs-1);
+}
+
+.h3 {
+  font-size: var(--fs-2);
+}
+
+.h4 {
+  font-size: var(--fs-4);
+}
+
+.h5 {
+  font-size: var(--fs-7);
+  font-weight: var(--fw-500);
+}
+
+.article-title {
+  position: relative;
+  padding-bottom: 7px;
+}
+
+.article-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 3px;
+  background: var(--accent-gradient);
+  border-radius: 3px;
+}
+
+.has-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.has-scrollbar::-webkit-scrollbar-track {
+  background: var(--border-light);
+  border-radius: 5px;
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 5px;
+}
+
+.has-scrollbar::-webkit-scrollbar-button {
+  width: 20px;
+}
+
+.content-card {
+  position: relative;
+  background: var(--bg-light-3);
+  padding: 15px;
+  padding-top: 45px;
+  border-radius: 14px;
+  box-shadow: var(--shadow-2);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.content-card::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-light-2);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+main {
+  margin: 15px 12px;
+  margin-bottom: 75px;
+  min-width: 259px;
+}
+
+.sidebar {
+  margin-bottom: 15px;
+  max-height: 112px;
+  overflow: hidden;
+  transition: var(--transition-2);
+}
+
+.sidebar.active {
+  max-height: 480px;
+}
+
+.sidebar-info {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar-box {
+  background: var(--bg-light-3);
+  border-radius: 20px;
+}
+
+.info-content .name {
+  color: var(--text-dark);
+  font-size: var(--fs-3);
+  font-weight: var(--fw-500);
+  letter-spacing: -0.25px;
+  margin-bottom: 10px;
+}
+
+.info-content .title {
+  color: var(--text-medium);
+  background: var(--bg-light-3);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-300);
+  width: max-content;
+  padding: 3px 12px;
+  border-radius: 8px;
+}
+
+.info_more-btn {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  border-radius: 0 15px;
+  font-size: 13px;
+  color: var(--accent-color);
+  background: var(--bg-light-3);
+  padding: 10px;
+  box-shadow: var(--shadow-2);
+  transition: var(--transition-1);
+  z-index: 1;
+}
+
+.info_more-btn::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: var(--bg-light-2);
+  transition: var(--transition-1);
+  z-index: -1;
+}
+
+.info_more-btn:hover,
+.info_more-btn:focus {
+  background: var(--accent-gradient);
+}
+
+.info_more-btn:hover::before,
+.info_more-btn:focus::before {
+  background: var(--bg-light-2);
+}
+
+.info_more-btn span {
+  display: none;
+}
+
+.sidebar-info_more {
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-2);
+}
+
+.sidebar.active .sidebar-info_more {
+  opacity: 1;
+  visibility: visible;
+}
+
+.contacts-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.contact-item {
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-info {
+  max-width: calc(100% - 46px);
+  width: calc(100% - 46px);
+}
+
+.contact-title {
+  color: var(--text-light);
+  font-size: var(--fs-8);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.contact-info :is(.contact-link, time, address) {
+  color: var(--text-dark);
+  font-size: var(--fs-7);
+}
+
+.contact-info address {
+  font-style: normal;
+}
+
+.hire-me-btn-container {
+  text-align: center;
+  margin: 20px 0 10px 0;
+}
+
+.hire-me-btn {
+  background: var(--accent-color);
+  color: var(--bg-light-2);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px;
+  border-radius: 14px;
+  font-size: var(--fs-6);
+  text-transform: uppercase;
+  font-weight: var(--fw-500);
+  box-shadow: var(--shadow-3);
+  z-index: 1;
+  transition: var(--transition-1);
+  position: relative;
+}
+
+.hire-me-btn::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-light-2);
+  border-radius: inherit;
+  z-index: -1;
+  transition: var(--transition-1);
+}
+
+.hire-me-btn:hover {
+  background: var(--accent-gradient);
+}
+
+.hire-me-btn:hover::before {
+  background: var(--bg-light-2);
+}
+
+/* FIX: Ensure button text and icon are always visible on top of the background */
+.hire-me-btn span,
+.hire-me-btn ion-icon {
+  position: relative;
+  z-index: 2;
+  color: var(--bg-light-2); /* Set the color to white or a contrasting color */
+}
+
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: hsla(0, 0%, 100%, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-light);
+  border-radius: 12px 12px 0 0;
+  box-shadow: var(--shadow-2);
+  z-index: 5;
+}
+
+.navbar-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.navbar-link {
+  color: var(--text-medium);
+  font-size: var(--fs-8);
+  padding: 20px 7px;
+  transition: color var(--transition-1);
+}
+
+.navbar-link:hover,
+.navbar-link:focus {
+  color: var(--text-dark);
+}
+
+.navbar-link.active {
+  color: var(--accent-color);
+}
+
+.about .article-title {
+  margin-bottom: 15px;
+}
+
+.about-text {
+  color: var(--text-medium);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+}
+
+.service {
+  margin-bottom: 35px;
+}
+
+.service-title {
+  margin-bottom: 20px;
+}
+
+.service-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.service-item {
+  position: relative;
+  background: var(--bg-light-3);
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: var(--shadow-2);
+  z-index: 1;
+}
+
+.service-item::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-light-2);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.service-icon-box {
+  margin-bottom: 10px;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.service-icon-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.service-content-box {
+  text-align: center;
+}
+
+.service-item-title {
+  margin-bottom: 7px;
+  color: var(--text-dark);
+}
+
+.service-item-text {
+  color: var(--text-medium);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-3);
+  line-height: 1.6;
+}
+
+.testimonials {
+  margin-bottom: 30px;
+}
+
+.testimonials-title {
+  margin-bottom: 20px;
+}
+
+.testimonials-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
+  margin: 0 -15px;
+  padding: 25px 15px;
+  padding-bottom: 35px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+}
+
+.testimonials-item {
+  min-width: 100%;
+  scroll-snap-align: center;
+}
+
+.testimonials-avatar-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(15px, -25px);
+  background: var(--bg-light-3);
+  border-radius: 14px;
+  box-shadow: var(--shadow-1);
+}
+
+.testimonials-item-title {
+  margin-bottom: 7px;
+}
+
+.testimonials-text {
+  color: var(--text-medium);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+  display: -webkit-box;
+  line-clamp: 4;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  z-index: 20;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.modal-container::-webkit-scrollbar {
+  display: none;
+}
+
+.modal-container.active {
+  pointer-events: all;
+  visibility: visible;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: hsla(0, 0%, 0%, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 1;
+  transition: var(--transition-1);
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.testimonials-modal {
+  background: var(--bg-light-2);
+  position: relative;
+  padding: 15px;
+  margin: 15px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  box-shadow: var(--shadow-3);
+  transform: scale(1.2);
+  opacity: 0;
+  transition: var(--transition-1);
+  z-index: 2;
+}
+
+.modal-container.active .testimonials-modal {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--bg-light-3);
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-dark);
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  opacity: 1;
+}
+
+.modal-close-btn ion-icon {
+  --ionicon-stroke-width: 50px;
+}
+
+.modal-img-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-avatar-box {
+  background: var(--bg-light-3);
+  width: max-content;
+  border-radius: 14px;
+  margin-bottom: 15px;
+  box-shadow: var(--shadow-2);
+}
+
+.modal-img-wrapper>img {
+  display: none;
+}
+
+.modal-title {
+  margin-bottom: 4px;
+}
+
+.modal-content time {
+  font-size: var(--fs-6);
+  color: var(--text-light);
+  font-weight: var(--fw-300);
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  color: var(--text-medium);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+}
+
+.article-title {
+  margin-bottom: 30px;
+}
+
+.timeline .title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.timeline-list {
+  font-size: var(--fs-6);
+  margin-left: 45px;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.timeline-item-title {
+  font-size: var(--fs-6);
+  line-height: 1.3;
+  margin-bottom: 7px;
+}
+
+.timeline-list span {
+  color: var(--accent-color);
+  font-weight: var(--fw-400);
+  line-height: 1.6;
+}
+
+.timeline-item:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: -30px;
+  width: 1px;
+  height: calc(100% + 50px);
+  background: var(--border-light);
+}
+
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -33px;
+  height: 6px;
+  width: 6px;
+  background: var(--accent-gradient);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--bg-light-2);
+}
+
+.timeline-text {
+  color: var(--text-medium);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+}
+
+.skill {
+  margin-bottom: 30px;
+}
+
+.skills-title {
+  margin-bottom: 20px;
+}
+
+.skills-list {
+  padding: 20px;
+}
+
+.skills-item:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.skill .title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+.skill .title-wrapper data {
+  color: var(--text-light);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-300);
+}
+
+.skill-progress-bg {
+  background: var(--border-light);
+  width: 100%;
+  height: 8px;
+  border-radius: 10px;
+}
+
+.skill-progress-fill {
+  background: var(--accent-gradient);
+  height: 100%;
+  border-radius: inherit;
+}
+
+.filter-list {
+  display: none;
+}
+
+.filter-select-box {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.filter-select {
+  background: var(--bg-light-2);
+  color: var(--text-medium);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+}
+
+.filter-select.active .select-icon {
+  transform: rotate(0.5turn);
+}
+
+.select-list {
+  background: var(--bg-light-2);
+  position: absolute;
+  top: calc(100% + 6px);
+  width: 100%;
+  padding: 6px;
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: 0.15s ease-in-out;
+}
+
+.filter-select.active+.select-list {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.select-item button {
+  background: var(--bg-light-2);
+  color: var(--text-medium);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  text-transform: capitalize;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+.select-item button:hover {
+  background: var(--bg-light-3);
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-bottom: 10px;
+}
+
+.project-item {
+  display: none;
+}
+
+.project-item.active {
+  display: block;
+  animation: scaleUp 0.25s ease forwards;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.project-item>a {
+  width: 100%;
+}
+
+.project-img {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.project-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 1;
+  transition: var(--transition-1);
+}
+
+.project-item>a:hover .project-img::before {
+  background: hsla(0, 0%, 0%, 0.1);
+}
+
+.project-item-icon-box {
+  --scale: 0.8;
+  background: var(--bg-light-3);
+  color: var(--accent-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--scale));
+  font-size: 20px;
+  padding: 18px;
+  border-radius: 12px;
+  opacity: 0;
+  z-index: 1;
+  transition: var(--transition-1);
+}
+
+.project-item>a:hover .project-item-icon-box {
+  --scale: 1;
+  opacity: 1;
+}
+
+.project-item-icon-box ion-icon {
+  --ionicon-stroke-width: 50px;
+}
+
+.project-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-1);
+}
+
+.project-item>a:hover img {
+  transform: scale(1.1);
+}
+
+.project-title,
+.project-category {
+  margin-left: 10px;
+}
+
+.project-title {
+  color: var(--text-dark);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-400);
+  text-transform: capitalize;
+  line-height: 1.3;
+}
+
+.project-category {
+  color: var(--text-light);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+}
+
+.mapbox {
+  position: relative;
+  height: 250px;
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+}
+
+.mapbox figure {
+  height: 100%;
+}
+
+.mapbox iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.contact-link-container {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.contact-link-container p {
+  color: var(--text-medium);
+  font-size: var(--fs-6);
+  margin-bottom: 20px;
+}
+
+.contact-btn {
+  background: var(--accent-color);
+  color: var(--bg-light-2);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px;
+  border-radius: 14px;
+  font-size: var(--fs-6);
+  text-transform: capitalize;
+  box-shadow: var(--shadow-3);
+  z-index: 1;
+  transition: var(--transition-1);
+  position: relative;
+}
+
+.contact-btn::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-light-2);
+  border-radius: inherit;
+  z-index: -1;
+  transition: var(--transition-1);
+}
+
+.contact-btn:hover {
+  background: var(--accent-color);
+  color: var(--bg-light-2);
+}
+
+.contact-btn:hover::before {
+  background: var(--bg-light-2);
+}
+
+
+
+/* FIX: Ensure button text and icon are visible on top */
+.contact-btn span,
+.contact-btn ion-icon {
+  color: var(--bg-light-2);
+  position: relative;
+  z-index: 2;
+}
+
+
+
+@media (min-width: 450px) {
+  .project-img,
+  .blog-banner-box {
+    height: auto;
+  }
+}
+
+@media (min-width: 580px) {
+  :root {
+    --fs-1: 32px;
+    --fs-2: 24px;
+    --fs-3: 26px;
+    --fs-4: 18px;
+    --fs-6: 15px;
+    --fs-7: 15px;
+    --fs-8: 12px;
+  }
+
+  .sidebar,
+  article {
+    width: 520px;
+    margin-inline: auto;
+    padding: 30px;
+  }
+
+  .article-title {
+    font-weight: var(--fw-600);
+    padding-bottom: 15px;
+  }
+
+  .article-title::after {
+    width: 40px;
+    height: 5px;
+  }
+
+  .icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    font-size: 18px;
+  }
+
+  main {
+    margin-top: 60px;
+    margin-bottom: 100px;
+  }
+
+  .sidebar {
+    max-height: 180px;
+    margin-bottom: 30px;
+  }
+
+  .sidebar.active {
+    max-height: 650px;
+  }
+
+  .sidebar-info {
+    gap: 25px;
+  }
+
+  .avatar-box {
+    border-radius: 30px;
+  }
+
+  .avatar-box img {
+    width: 120px;
+  }
+
+  .info-content .name {
+    margin-bottom: 15px;
+  }
+
+  .info-content .title {
+    padding: 5px 18px;
+  }
+
+  .info_more-btn {
+    top: -30px;
+    right: -30px;
+    padding: 10px 15px;
+  }
+
+  .info_more-btn span {
+    display: block;
+    font-size: var(--fs-8);
+  }
+
+  .info_more-btn ion-icon {
+    display: none;
+  }
+
+  .separator {
+    margin: 32px 0;
+  }
+
+  .contacts-list {
+    gap: 20px;
+  }
+
+  .contact-info {
+    max-width: calc(100% - 64px);
+    width: calc(100% - 64px);
+  }
+
+  .hire-me-btn {
+    width: 100%;
+  }
+
+  .navbar {
+    border-radius: 20px 20px 0 0;
+  }
+
+  .navbar-list {
+    gap: 20px;
+  }
+
+  .navbar-link {
+    --fs-8: 14px;
+  }
+
+  .about .article-title {
+    margin-bottom: 20px;
+  }
+
+  .about-text {
+    margin-bottom: 40px;
+  }
+
+  .service-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 30px;
+  }
+
+  .service-icon-box {
+    margin-bottom: 0;
+    margin-top: 5px;
+  }
+
+  .service-content-box {
+    text-align: left;
+  }
+
+  .testimonials-title {
+    margin-bottom: 25px;
+  }
+
+  .testimonials-list {
+    gap: 30px;
+    margin: 0 -30px;
+    padding: 30px;
+    padding-bottom: 35px;
+  }
+
+  .content-card {
+    padding: 30px;
+    padding-top: 25px;
+  }
+
+  .testimonials-avatar-box {
+    transform: translate(30px, -30px);
+    border-radius: 20px;
+  }
+
+  .testimonials-avatar-box img {
+    width: 80px;
+  }
+
+  .testimonials-item-title {
+    margin-bottom: 10px;
+    margin-left: 95px;
+  }
+
+  .testimonials-text {
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+  }
+
+  .modal-container {
+    padding: 20px;
+  }
+
+  .testimonials-modal {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 25px;
+    padding: 30px;
+    border-radius: 20px;
+  }
+
+  .modal-img-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-avatar-box {
+    border-radius: 18px;
+    margin-bottom: 0;
+  }
+
+  .modal-avatar-box img {
+    width: 65px;
+  }
+
+  .modal-img-wrapper>img {
+    display: block;
+    flex-grow: 1;
+    width: 35px;
+  }
+
+  .timeline-list {
+    margin-left: 65px;
+  }
+
+  .timeline-item:not(:last-child)::before {
+    left: -40px;
+  }
+
+  .timeline-item::after {
+    height: 8px;
+    width: 8px;
+    left: -43px;
+  }
+
+  .skills-item:not(:last-child) {
+    margin-bottom: 25px;
+  }
+
+  .project-img,
+  .blog-banner-box {
+    border-radius: 16px;
+  }
+
+  .mapbox {
+    height: 380px;
+    border-radius: 18px;
+  }
+
+  .input-wrapper {
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  .form-input {
+    padding: 15px 20px;
+  }
+
+  textarea.form-input {
+    margin-bottom: 30px;
+  }
+
+  .form-btn {
+    --fs-6: 16px;
+    padding: 16px 20px;
+  }
+
+  .form-btn ion-icon {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 768px) {
+  .sidebar,
+  article {
+    width: 700px;
+  }
+
+  .has-scrollbar::-webkit-scrollbar-button {
+    width: 100px;
+  }
+
+  .contacts-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 15px;
+  }
+
+  .navbar-link {
+    --fs-8: 15px;
+  }
+
+  .testimonials-modal {
+    gap: 35px;
+    max-width: 680px;
+  }
+
+  .modal-avatar-box img {
+    width: 80px;
+  }
+
+  .article-title {
+    padding-bottom: 20px;
+  }
+
+  .filter-select-box {
+    display: none;
+  }
+
+  .filter-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+    padding-left: 5px;
+    margin-bottom: 30px;
+  }
+
+  .filter-item button {
+    color: var(--text-medium);
+    font-size: var(--fs-5);
+    transition: var(--transition-1);
+  }
+
+  .filter-item button:hover {
+    color: var(--text-dark);
+  }
+
+  .filter-item button.active {
+    color: var(--accent-color);
+  }
+
+  .project-list,
+  .blog-posts-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --shadow-1: 0 4px 12px hsla(0, 0%, 0%, 0.05);
+    --shadow-2: 0 8px 16px hsla(0, 0%, 0%, 0.1);
+    --shadow-3: 0 16px 24px hsla(0, 0%, 0%, 0.15);
+  }
+
+  .sidebar,
+  article {
+    width: 950px;
+    box-shadow: var(--shadow-3);
+  }
+
+  main {
+    margin-bottom: 60px;
+  }
+
+  .main-content {
+    position: relative;
+    width: max-content;
+    margin: auto;
+  }
+
+  .navbar {
+    position: absolute;
+    bottom: auto;
+    top: 0;
+    left: auto;
+    right: 0;
+    width: max-content;
+    border-radius: 0 20px;
+    padding: 0 20px;
+    box-shadow: none;
+  }
+
+  .navbar-list {
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  .navbar-link {
+    font-weight: var(--fw-500);
+  }
+
+  .service-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 25px;
+  }
+
+  .testimonials-item {
+    min-width: calc(50% - 15px);
+  }
+
+  .project-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1250px) {
+  body::-webkit-scrollbar {
+    width: 20px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: var(--bg-light-1);
+  }
+
+  body::-webkit-scrollbar-thumb {
+    border: 5px solid var(--bg-light-1);
+    background: hsla(0, 0%, 0%, 0.1);
+    border-radius: 20px;
+    box-shadow: inset 1px 1px 0 hsla(0, 0%, 0%, 0.05), inset -1px -1px 0 hsla(0, 0%, 0%, 0.05);
+  }
+
+  body::-webkit-scrollbar-thumb:hover {
+    background: hsla(0, 0%, 0%, 0.15);
+  }
+
+  body::-webkit-scrollbar-button {
+    height: 60px;
+  }
+
+  .sidebar,
+  article {
+    width: auto;
+  }
+
+  article {
+    min-height: 100%;
+  }
+
+  main {
+    max-width: 1200px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+  }
+
+  .main-content {
+    min-width: 75%;
+    width: 75%;
+    margin: 0;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 60px;
+    max-height: max-content;
+    height: 100%;
+    margin-bottom: 0;
+    padding-top: 60px;
+    z-index: 1;
+  }
+
+  .sidebar-info {
+    flex-direction: column;
+  }
+
+  .avatar-box img {
+    width: 150px;
+  }
+
+  .info-content .name {
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .info-content .title {
+    margin: auto;
+  }
+
+  .info_more-btn {
+    display: none;
+  }
+
+  .sidebar-info_more {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .contacts-list {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info :is(.contact-link) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .contact-info :is(.contact-link, time, address) {
+    --fs-7: 14px;
+    font-weight: var(--fw-300);
+  }
+
+  .separator:last-of-type {
+    margin: 15px 0;
+    opacity: 0;
+  }
+
+  .social-list {
+    justify-content: center;
+  }
+
+  .timeline-text {
+    max-width: 700px;
+  }
+}
+
+    
+</style>
+</head>
+
+<body>
+  <main>
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-info">
+        <figure class="avatar-box">
+          <img src="/assets/images/my-avatar.png" alt="Ujjwal" width="80">
+        </figure>
+        <div class="info-content">
+          <h1 class="name" title="Ujjwal">Ujjwal Kumar</h1>
+          <p class="title">Visual Storyteller & Editor</p>
+        </div>
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Info</span>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+      </div>
+      <div class="sidebar-info_more">
+        <div class="separator"></div>
+        <ul class="contacts-list">
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+              <a href="mailto:ujjwal.kumar.edit@example.com" class="contact-link">ujjwal.kumar.edit@example.com</a>
+            </div>
+          </li>
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+              <a href="tel:+918292108872" class="contact-link">+91 82921 08872</a>
+            </div>
+          </li>
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+              <time datetime="1998-05-15">May 15, 1998</time>
+            </div>
+          </li>
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+              <address>Rohats, Bihar, India</address>
+            </div>
+          </li>
+        </ul>
+        <div class="separator"></div>
+        <div class="hire-me-btn-container">
+          <a href="#contact" class="hire-me-btn" data-nav-link-name="contact">
+            <ion-icon name="briefcase-outline"></ion-icon>
+            <span>Hire Me</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+    <div class="main-content">
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <button class="navbar-link active" data-nav-link>About</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Portfolio</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+        </ul>
+      </nav>
+      <article class="about active" data-page="about">
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+        <section class="about-text">
+          <p>
+            Hello! I'm Ujjwal Kumar, a creative and results-driven video editor based in Gaya, India. With <strong>5 years of
+              experience</strong>, I've honed my skills in transforming raw footage into compelling visual narratives. My passion lies in
+            creating videos that captivate audiences and effectively communicate a brand's message.
+          </p>
+          <p>
+            My expertise spans the entire post-production process. I specialize in seamless cutting, dynamic motion
+            graphics, professional sound design, and cinematic color grading. Whether it's a corporate video, a social
+            media ad, or a short film, I am dedicated to delivering a final product that is not only high-quality but
+            also aligns perfectly with your vision. I'm proficient in both desktop and mobile editing workflows to
+            provide versatile solutions for any project.
+          </p>
+        </section>
+        <section class="service">
+          <h3 class="h3 service-title">What I'm doing</h3>
+          <ul class="service-list">
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="ayush/images/Professional_Editing.jpg" alt="video editing icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Professional Editing</h4>
+                <p class="service-item-text">
+                  Transforming raw footage into polished, engaging videos for all platforms.
+                </p>
+              </div>
+            </li>
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="/ayush/images/Motion_Graphics.jpg" alt="motion graphics icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Motion Graphics</h4>
+                <p class="service-item-text">
+                  Adding animated text, logos, and effects to make your content pop.
+                </p>
+              </div>
+            </li>
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="/ayush/images/colour_grading.jpg" alt="color grading icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Color Grading</h4>
+                <p class="service-item-text">
+                  Crafting a unique visual style and mood for your video with expert color correction.
+                </p>
+              </div>
+            </li>
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="/ayush/images/Audio_Post-Production.jpeg" alt="sound design icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Audio Post-Production</h4>
+                <p class="service-item-text">
+                  Enhancing audio quality, sound effects, and music for a complete, immersive experience.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section class="testimonials">
+          <h3 class="h3 testimonials-title">Client Testimonials</h3>
+          <ul class="testimonials-list has-scrollbar">
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-1.png" alt="Sarah Chen" width="60" data-testimonials-avatar>
+                </figure>
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Sarah Chen</h4>
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    Ujjwal is a true professional. He edited a promotional video for our startup, and the final product
+                    was far beyond our expectations. His attention to detail and creative input were invaluable.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-2.png" alt="Mark Wilson" width="60" data-testimonials-avatar>
+                </figure>
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Mark Wilson</h4>
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    Ujjwal's work on our documentary short was fantastic. He has a great understanding of pacing and
+                    storytelling, making the narrative flow perfectly. Highly recommend his services!
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-3.png" alt="Linda Green" width="60" data-testimonials-avatar>
+                </figure>
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Linda Green</h4>
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    We hired Ujjwal to handle our YouTube channel's editing. His edits are clean, engaging, and always
+                    delivered on time. He's a pleasure to work with and a great asset to our team.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-4.png" alt="Jason Miller" width="60" data-testimonials-avatar>
+                </figure>
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Jason Miller</h4>
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    Ujjwal is an incredibly talented editor. He took our raw footage and turned it into a dynamic,
+                    professional-looking social media ad that significantly boosted our engagement.
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <div class="modal-container" data-modal-container>
+          <div class="overlay" data-overlay></div>
+          <section class="testimonials-modal">
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="./assets/images/avatar-1.png" alt="Sarah Chen" width="80" data-modal-img>
+              </figure>
+              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+            </div>
+            <div class="modal-content">
+              <h4 class="h3 modal-title" data-modal-title>Sarah Chen</h4>
+              <time datetime="2024-05-14">14 May, 2024</time>
+              <div data-modal-text>
+                <p>
+                  Ujjwal is a true professional. He edited a promotional video for our startup, and the final product
+                  was far beyond our expectations. His attention to detail and creative input were invaluable.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+      </article>
+      <article class="resume" data-page="resume">
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="school-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Education</h3>
+          </div>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Professional Video Editing & Motion Graphics</h4>
+              <span>2020 — 2021</span>
+              <p class="timeline-text">
+                Advanced training in professional video editing, motion graphics, and post-production techniques.
+              </p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Adobe Creative Cloud Certified</h4>
+              <span>2019 — 2020</span>
+              <p class="timeline-text">
+                Certification in the full Adobe Creative Cloud suite, including Premiere Pro, After Effects, and
+                Photoshop.
+              </p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Diploma in Media Production</h4>
+              <span>2016 — 2018</span>
+              <p class="timeline-text">
+                Foundational studies in media theory, visual storytelling, and digital production.
+              </p>
+            </li>
+          </ol>
+        </section>
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="briefcase-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Experience</h3>
+          </div>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Freelance Video Editor</h4>
+              <span>2022 — Present</span>
+              <p class="timeline-text">
+                Partnered with various clients on diverse projects, from social media content to corporate
+                presentations, ensuring high-quality, impactful results.
+              </p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Junior Video Editor</h4>
+              <span>2020 — 2022</span>
+              <p class="timeline-text">
+                Supported the post-production team at a creative agency, focusing on cutting, syncing, and preliminary
+                color work for various projects.
+              </p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Production Assistant</h4>
+              <span>2019 — 2020</span>
+              <p class="timeline-text">
+                Assisted in the organization of footage, managed media files, and learned foundational editing
+                principles in a fast-paced production environment.
+              </p>
+            </li>
+          </ol>
+        </section>
+        <section class="skill">
+          <h3 class="h3 skills-title">My skills</h3>
+          <ul class="skills-list content-card">
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Video Editing</h5>
+                <data value="95">95%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 95%;"></div>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Color Grading</h5>
+                <data value="85">85%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 85%;"></div>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Motion Graphics</h5>
+                <data value="80">80%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%;"></div>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Sound Design</h5>
+                <data value="75">75%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 75%;"></div>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </article>
+      <article class="portfolio" data-page="portfolio">
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+        <section class="projects">
+          <ul class="filter-list" id="filter-buttons-container">
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+            </ul>
+          <div class="filter-select-box">
+            <button class="filter-select" data-select>
+              <div class="select-value" data-selecct-value>Select category</div>
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+            </button>
+            <ul class="select-list" id="filter-select-list">
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+              </ul>
+          </div>
+          <ul class="project-list" data-projects-list></ul>
+        </section>
+      </article>
+      <article class="contact" data-page="contact">
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d365824.2386927376!2d84.05260124790176!3d24.81423877990171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398c8c72834c9c11%3A0x67319c501e7e4529!2sRohtas%2C%20Bihar%2C%20India!5e0!3m2!1sen!2sus!4v1655225880479!5m2!1sen!2sus" width="400" height="300" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </figure>
+        </section>
+        <section class="contact-link-container">
+          <p>
+            I'd love to hear about your project! Please visit my dedicated contact page to get in touch.
+          </p>
+          <a href="contact.html" class="contact-btn">
+            <ion-icon name="mail-outline"></ion-icon>
+            <span>HIRE EDITOR - FROM</span>
+          </a>
+        </section>
+      </article>
+    </div>
+  </main>
+  <script>
+    'use strict';
+
+    const elementToggleFunc = function(elem) {
+      elem.classList.toggle("active");
+    }
+
+    const sidebar = document.querySelector("[data-sidebar]");
+    const sidebarBtn = document.querySelector("[data-sidebar-btn]");
+    sidebarBtn.addEventListener("click", function() {
+      elementToggleFunc(sidebar);
+    });
+
+    const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
+    const modalContainer = document.querySelector("[data-modal-container]");
+    const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
+    const overlay = document.querySelector("[data-overlay]");
+
+    const modalImg = document.querySelector("[data-modal-img]");
+    const modalTitle = document.querySelector("[data-modal-title]");
+    const modalText = document.querySelector("[data-modal-text]");
+
+    const testimonialsModalFunc = function() {
+      modalContainer.classList.toggle("active");
+      overlay.classList.toggle("active");
+    }
+
+    for (let i = 0; i < testimonialsItem.length; i++) {
+      testimonialsItem[i].addEventListener("click", function() {
+        modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
+        modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
+        modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
+        modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
+        testimonialsModalFunc();
+      });
+    }
+
+    modalCloseBtn.addEventListener("click", testimonialsModalFunc);
+    overlay.addEventListener("click", testimonialsModalFunc);
+
+    const select = document.querySelector("[data-select]");
+    const selectValue = document.querySelector("[data-selecct-value]");
+
+    if (select) {
+      select.addEventListener("click", function() {
+        elementToggleFunc(this);
+      });
+    }
+
+    const navigationLinks = document.querySelectorAll("[data-nav-link]");
+    const pages = document.querySelectorAll("[data-page]");
+
+    for (let i = 0; i < navigationLinks.length; i++) {
+      navigationLinks[i].addEventListener("click", function() {
+        for (let j = 0; j < pages.length; j++) {
+          if (this.innerHTML.toLowerCase() === pages[j].dataset.page) {
+            pages[j].classList.add("active");
+            navigationLinks[j].classList.add("active");
+            window.scrollTo(0, 0);
+          } else {
+            pages[j].classList.remove("active");
+            navigationLinks[j].classList.remove("active");
+          }
+        }
+      });
+    }
+
+    // --- Dynamic Portfolio Loading Logic ---
+    const projectsList = document.querySelector('[data-projects-list]');
+    const filterButtonsContainer = document.getElementById('filter-buttons-container');
+    const filterSelectList = document.getElementById('filter-select-list');
+
+    let filterItems = [];
+
+    const renderCategoryFilters = (categories) => {
+      // Clear existing dynamic buttons and select items
+      const existingButtons = filterButtonsContainer.querySelectorAll('.filter-item:not(:first-child)');
+      existingButtons.forEach(btn => btn.remove());
+      const existingSelectItems = filterSelectList.querySelectorAll('.select-item:not(:first-child)');
+      existingSelectItems.forEach(item => item.remove());
+
+      categories.forEach(category => {
+        // Create the desktop button
+        const buttonLi = document.createElement('li');
+        buttonLi.classList.add('filter-item');
+        buttonLi.innerHTML = `<button data-filter-btn>${category}</button>`;
+        filterButtonsContainer.appendChild(buttonLi);
+
+        // Create the mobile select list item
+        const selectLi = document.createElement('li');
+        selectLi.classList.add('select-item');
+        selectLi.innerHTML = `<button data-select-item>${category}</button>`;
+        filterSelectList.appendChild(selectLi);
+      });
+
+      // Re-attach event listeners to the newly created buttons and items
+      attachFilterListeners();
+      attachSelectListeners();
+    };
+
+    const attachFilterListeners = () => {
+      const filterBtn = document.querySelectorAll("[data-filter-btn]");
+      let lastClickedBtn = filterBtn[0];
+
+      filterBtn.forEach(button => {
+        button.addEventListener("click", function() {
+          const selectedValue = this.innerText;
+          selectValue.innerText = selectedValue;
+          filterFunc(selectedValue);
+          if (lastClickedBtn) {
+            lastClickedBtn.classList.remove("active");
+          }
+          this.classList.add("active");
+          lastClickedBtn = this;
+        });
+      });
+    };
+
+    const attachSelectListeners = () => {
+      const selectItems = document.querySelectorAll("[data-select-item]");
+      selectItems.forEach(item => {
+        item.addEventListener("click", function() {
+          const selectedValue = this.innerText;
+          selectValue.innerText = selectedValue;
+          elementToggleFunc(select);
+          filterFunc(selectedValue);
+        });
+      });
+    };
+
+    const createProjectCard = (project) => {
+      const li = document.createElement('li');
+      li.classList.add('project-item');
+      li.setAttribute('data-filter-item', '');
+      li.setAttribute('data-category', project.category);
+      li.innerHTML = `
+        <a href="project-detail.php?id=${project.id}">
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="${project.thumbnail}" alt="${project.title}" loading="lazy">
+          </figure>
+          <h3 class="project-title">${project.title}</h3>
+          <p class="project-category">${project.category}</p>
+        </a>
+      `;
+      return li;
+    };
+
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch('Profoliyo.php');
+        if (!response.ok) {
+          throw new Error('Something went wrong, please try again later.');
+        }
+        const data = await response.json();
+
+        if (data.error) {
+          throw new Error(data.error);
+        }
+
+        renderCategoryFilters(data.categories);
+        renderProjects(data.projects);
+
+      } catch (error) {
+        console.error('Failed to fetch projects:', error);
+        projectsList.innerHTML = `<p class="error-message">Oops! Something went wrong. We couldn't load the portfolio. Please check back later.</p>`;
+      }
+    };
+
+    const renderProjects = (projects) => {
+      projectsList.innerHTML = '';
+      projects.forEach(project => {
+        const card = createProjectCard(project);
+        projectsList.appendChild(card);
+      });
+
+      filterItems = document.querySelectorAll("[data-filter-item]");
+      // The 'All' filter should be active by default
+      filterFunc('All');
+    };
+
+    const filterFunc = function(selectedValue) {
+      if (filterItems.length === 0) {
+        filterItems = document.querySelectorAll("[data-filter-item]");
+      }
+
+      const selectedCat = selectedValue.toLowerCase().replace(/\s/g, '');
+
+      filterItems.forEach(item => {
+        const itemCategory = item.dataset.category.toLowerCase().replace(/\s/g, '');
+        if (selectedCat === "all" || selectedCat === itemCategory) {
+          item.classList.add("active");
+        } else {
+          item.classList.remove("active");
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchProjects);
+  </script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

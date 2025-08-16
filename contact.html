@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+<title>HIRE EDITOR - FROM</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root{
+    --bg:#fff;
+    --muted:#6b7280;
+    --dark-muted: #4b5563;
+    --danger:#c53030;
+    --success:#1f8a3a;
+    --input-border:#d1d5db;
+    --accent:#007BFF;
+    --card-radius:12px;
+    --focus-ring: rgba(11, 99, 214, 0.2);
+    --warning: #f59e0b;
+    --dark-btn-bg: #111827;
+    --dark-btn-hover: #1f2937;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+    background:var(--bg);
+    color:#111827;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.5;
+  }
+  .container{
+    max-width:640px; 
+    margin:15px auto;
+    padding:10px;
+  }
+  .card{
+    max-width:420px; 
+    margin:0 auto;
+    padding:0 5px;
+  }
+  .logo-container {
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .logo {
+    width: 90px;
+    height: auto;
+  }
+  .form-heading{
+    margin: 14px 0 6px 0;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+  }
+  .form-description{
+    margin: 0 0 20px 0;
+    color: var(--muted);
+    font-size: 14px;
+    text-align: center;
+  }
+  label{
+    display:block;
+    font-weight:600;
+    margin:12px 5px 5px 5px; 
+    font-size:13px; 
+  }
+  .field{
+    position:relative;
+    margin:0 5px;
+    transition: all 0.2s ease;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="url"],
+  textarea,
+  select{
+    width:100%;
+    padding:9px 11px; 
+    border-radius:7px; 
+    border:2px solid var(--input-border);
+    font-size:14px; 
+    outline:none;
+    transition:box-shadow .12s, border-color .12s;
+    background:#fff;
+    font-family:inherit;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  textarea {
+      height: 100px;
+      resize: vertical;
+  }
+  .select-wrapper {
+      position: relative;
+  }
+  .select-wrapper::after {
+      content: '\f078';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: var(--muted);
+      font-size: 14px;
+      transition: color 0.2s;
+  }
+  .select-wrapper select:focus + .select-wrapper::after {
+      color: var(--accent);
+  }
+  select {
+    padding-right: 30px;
+  }
+  select:focus{ 
+    border-color:var(--accent); 
+    box-shadow:0 0 0 3px var(--focus-ring); 
+  }
+  select:valid {
+    color: inherit;
+  }
+  select:valid option[value=""] {
+    display: none;
+  }
+  input:focus, textarea:focus{ 
+    border-color:var(--accent); 
+    box-shadow:0 0 0 3px var(--focus-ring); 
+  }
+  .input-error input, .input-error select, .input-error textarea,
+  .input-error .select-wrapper{ 
+    border-color:var(--danger) !important; 
+  }
+  .input-success input, .input-success select, .input-success textarea,
+  .input-success .select-wrapper{ 
+    border-color:var(--success) !important; 
+  }
+  .help{
+    margin:5px 5px;
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.35;
+  }
+  .error-row{
+    display:flex;
+    align-items:flex-start;
+    gap:5px;
+    color:var(--danger);
+    font-weight:600;
+    margin:5px 5px;
+    font-size:12px;
+  }
+  .checkmark {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--success);
+    color: #fff;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    transition: transform 0.2s ease;
+  }
+  .create-btn{
+    margin:14px 5px; 
+    display:block;
+    width:calc(100% - 10px);
+    padding:12px; 
+    border-radius:8px; 
+    background:#111827;
+    color:#fff;
+    font-weight:600;
+    font-size:14px; 
+    border:0;
+    cursor:pointer;
+    transition: all 0.2s ease;
+    font-family:inherit;
+  }
+  .create-btn:hover { background: #1f2937; }
+  .create-btn:active{ transform:translateY(1px); }
+  .create-btn:disabled {
+    background: #d1d5db;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  /* Custom Dropdown Styles */
+  .country-dropdown, .payment-dropdown, .category-dropdown {
+    position: relative;
+  }
+  .country-dropdown input[type="text"], .payment-dropdown input[type="text"], .category-dropdown input[type="text"] {
+    cursor: pointer;
+  }
+  .dropdown-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: #fff;
+    border: 1px solid var(--input-border);
+    border-radius: 7px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    margin-top: 5px;
+  }
+  .dropdown-list-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .dropdown-list-item:hover {
+    background: #f5f5f5;
+  }
+  .dropdown-list-item.selected {
+    background: var(--accent);
+    color: #fff;
+  }
+  .dropdown-search {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--input-border);
+    border-radius: 7px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+  }
+
+  @media (max-width:420px){
+    .container{ padding:8px; margin:4px auto; }
+    label{ margin-left:3px; font-size:12px; }
+    .field{ margin-left:3px; margin-right:3px }
+    .help,.small-muted,.error-row{ margin-left:3px; margin-right:3px; font-size:11px; }
+    .logo { width: 80px; }
+    input, select, textarea {
+      padding: 8px 10px;
+      font-size: 13px;
+    }
+  }
+  
+  .footer {
+    text-align: center;
+    margin-top: 15px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.4;
+  }
+  .footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .separator {
+    border-top: 1px solid #e5e7eb;
+    margin: 15px 0;
+  }
+
+  .dynamic-field {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+  .dynamic-field.show {
+    opacity: 1;
+    max-height: 150px;
+    margin-top: 10px;
+  }
+
+  /* NEW File Uploader Styles from first HTML */
+  .file-upload-wrapper {
+      margin: 14px 5px;
+      border: 2px dashed var(--input-border);
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.25s ease;
+  }
+  .file-upload-wrapper.uploading {
+      border-color: var(--accent);
+      animation: pulse-border 1s infinite alternate;
+  }
+  @keyframes pulse-border {
+      from { border-color: var(--input-border); }
+      to { border-color: var(--accent); }
+  }
+  .file-upload-wrapper:hover {
+      border-color: var(--accent);
+  }
+  .file-upload-wrapper.disabled {
+      cursor: not-allowed;
+      border-color: var(--input-border);
+  }
+  .file-upload-wrapper.disabled .file-upload-label {
+      color: var(--muted);
+  }
+  .file-upload-label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+  }
+  .file-upload-label i {
+      font-size: 40px;
+      color: var(--accent);
+  }
+  .drag-drop-icon {
+      animation: rotate-in 0.5s ease;
+  }
+  @keyframes rotate-in {
+      from { transform: rotateY(90deg); opacity: 0; }
+      to { transform: rotateY(0deg); opacity: 1; }
+  }
+  .drag-drop-icon.animate-out {
+      animation: rotate-out 0.5s ease forwards;
+  }
+  @keyframes rotate-out {
+      from { transform: rotateY(0deg); opacity: 1; }
+      to { transform: rotateY(90deg); opacity: 0; }
+  }
+  .file-uploaded-icon {
+      animation: rotate-in 0.5s ease;
+  }
+  .form-message {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 500;
+      font-size: 14px;
+      display: none;
+      word-wrap: break-word;
+  }
+  .form-message.success {
+      background-color: #28a74533;
+      color: #28a745;
+  }
+  .form-message.error {
+      background-color: #dc354533;
+      color: #dc3545;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="logo-container">
+        <img src="https://ayushji.great-site.net/assets/images/my-avatar.png" alt="Company Logo" class="logo">
+      </div>
+      
+      <h3 class="form-heading">Hire Editor</h3>
+      <p class="form-description">Fill out the form below and we'll get back to you shortly.</p>
+      
+      <form id="contactForm" novalidate>
+        
+        <label for="fullName">Full Name<span style="color:var(--muted);font-weight:400"> *</span></label>
+        <div class="field" id="fullNameField">
+          <input id="fullName" type="text" placeholder="Enter your full name" required>
+          <div id="fullNameOK" class="checkmark" style="display:none"><i class="fas fa-check"></i></div>
+        </div>
+        <div id="fullNameError" class="error-row" style="display:none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-top:2px;">
+            <path d="M11.001 7h2v6h-2z" fill="currentColor"/>
+            <path d="M11 17h2v2h-2z" fill="currentColor"/>
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="currentColor" stroke-width="0.5" fill="none"/>
+          </svg>
+          <div id="fullNameErrorText">Full Name is required</div>
+        </div>
+
+        <label for="email">Email<span style="color:var(--muted);font-weight:400"> *</span></label>
+        <div class="field" id="emailField">
+          <input id="email" type="email" placeholder="your@email.com" required>
+          <div id="emailOK" class="checkmark" style="display:none"><i class="fas fa-check"></i></div>
+        </div>
+        <div id="emailError" class="error-row" style="display:none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-top:2px;">
+            <path d="M11.001 7h2v6h-2z" fill="currentColor"/>
+            <path d="M11 17h2v2h-2z" fill="currentColor"/>
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="currentColor" stroke-width="0.5" fill="none"/>
+          </svg>
+          <div id="emailErrorText">Please enter a valid email address</div>
+        </div>
+        
+        <label for="phone">Phone Number</label>
+        <div class="field" id="phoneField">
+          <input id="phone" type="tel" placeholder="e.g. +91 98765 43210">
+          <div id="phoneOK" class="checkmark" style="display:none"><i class="fas fa-check"></i></div>
+        </div>
+        <div id="phoneError" class="error-row" style="display:none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-top:2px;">
+            <path d="M11.001 7h2v6h-2z" fill="currentColor"/>
+            <path d="M11 17h2v2h-2z" fill="currentColor"/>
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="currentColor" stroke-width="0.5" fill="none"/>
+          </svg>
+          <div id="phoneErrorText">Please enter a valid phone number</div>
+        </div>
+
+        <label for="countryInput">Your Country/Region<span style="color:var(--muted);font-weight:400"> *</span></label>
+        <div class="field country-dropdown" id="countryField">
+          <div class="select-wrapper">
+              <input id="countryInput" type="text" placeholder="Select your country" readonly required>
+          </div>
+          <div id="countryOK" class="checkmark" style="display:none"><i class="fas fa-check"></i></div>
+          <div class="dropdown-list" id="countryList">
+            <input type="text" class="dropdown-search" placeholder="Search for a country...">
+          </div>
+        </div>
+        <div id="countryError" class="error-row" style="display:none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-top:2px;">
+            <path d="M11.001 7h2v6h-2z" fill="currentColor"/>
+            <path d="M11 17h2v2h-2z" fill="currentColor"/>
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="currentColor" stroke-width="0.5" fill="none"/>
+          </svg>
+          <div>Please select your country</div>
+        </div>
+        
+        <label for="categoryInput">Service Category<span style="color:var(--muted);font-weight:400"> *</span></label>
+        <div class="field category-dropdown" id="categoryField">
+          <div class="select-wrapper">
+              <input id="categoryInput" type="text" placeholder="Select a service" readonly required>
+          </div>
+          <div id="categoryOK" class="checkmark" style="display:none"><i class="fas fa-check"></i></div>
+          <div class="dropdown-list" id="categoryList">
+            <input type="text" class="dropdown-search" placeholder="Search for a category...">
+          </div>
+        </div>
+        <div id="categoryError" class="error-row" style="display:none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-top:2px;">
+            <path d="M11.001 7h2v6h-2z" fill="currentColor"/>
+            <path d="M11 17h2v2h-2z" fill="currentColor"/>
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="currentColor" stroke-width="0.5" fill="none"/>
+          </svg>
+          <div>Please select a service category</div>
+        </div>
+
+        <label for="paymentInput">Payment Method<span style="color:var(--muted);font-weight:400"> *</span></label>
+        <div class="field payment-dropdown" id="paymentField">
+          <div class="select-wrapper">
+              <input id="paymentInput" type="text" placeholder="Select a payment method" readonly required>
+          </div>
+          <div id="paymentOK" class="checkmark" style="display:none"><i class="fas fa-check"></i></div>
+          <div class="dropdown-list" id="paymentList">
+            <input type="text" class="dropdown-search" placeholder="Search for a method...">
+          </div>
+        </div>
+        <div id="paymentError" class="error-row" style="display:none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-top:2px;">
+            <path d="M11.001 7h2v6h-2z" fill="currentColor"/>
+            <path d="M11 17h2v2h-2z" fill="currentColor"/>
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="currentColor" stroke-width="0.5" fill="none"/>
+          </svg>
+          <div>Please select a payment method</div>
+        </div>
+
+        <div id="dynamicPaymentFieldContainer"></div>
+
+        <label for="budget">Budget (in USD)</label>
+        <div class="field" id="budgetField">
+          <input id="budget" type="number" placeholder="e.g. 500" min="0">
+          <div id="budgetOK" class="checkmark" style="display:none"><i class="fas fa-check"></i></div>
+        </div>
+        <div id="budgetError" class="error-row" style="display:none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-top:2px;">
+            <path d="M11.001 7h2v6h-2z" fill="currentColor"/>
+            <path d="M11 17h2v2h-2z" fill="currentColor"/>
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="currentColor" stroke-width="0.5" fill="none"/>
+          </svg>
+          <div id="budgetErrorText">Please enter a valid budget</div>
+        </div>
+        
+        <label for="referenceLink">Reference Video Link</label>
+        <div class="field" id="referenceLinkField">
+          <input id="referenceLink" type="url" placeholder="e.g. https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+          <div id="referenceLinkOK" class="checkmark" style="display:none"><i class="fas fa-check"></i></div>
+        </div>
+        <div id="referenceLinkError" class="error-row" style="display:none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-top:2px;">
+            <path d="M11.001 7h2v6h-2z" fill="currentColor"/>
+            <path d="M11 17h2v2h-2z" fill="currentColor"/>
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="currentColor" stroke-width="0.5" fill="none"/>
+          </svg>
+          <div id="referenceLinkErrorText">Please enter a valid URL</div>
+        </div>
+        
+        <label>Upload Files (or use link above)<span style="color:var(--muted);font-weight:400"> *</span></label>
+<div class="file-upload-wrapper" data-upload-wrapper>
+    <label for="fileInput" class="file-upload-label" data-upload-label>
+        <i class="fas fa-cloud-upload-alt drag-drop-icon" data-upload-icon-drag></i>
+        <i class="fas fa-check-circle file-uploaded-icon" style="display: none;"></i>
+        <span data-upload-text>Drag & Drop a file or <strong>Click to browse</strong></span>
+    </label>
+    <div class="progress-container" style="display: none; margin-top: 10px;">
+      <div class="progress-bar-label" style="font-size: 12px; color: var(--muted); text-align: left; margin-bottom: 5px;"></div>
+      <div class="progress-bar-bg" style="width: 100%; height: 8px; background-color: #e5e7eb; border-radius: 4px;">
+          <div class="progress-bar-fill" style="height: 100%; width: 0%; background-color: var(--accent); border-radius: 4px; transition: width 0.3s ease;"></div>
+      </div>
+    </div>
+    <input type="file" id="fileInput" name="video_file" class="file-input" style="display: none;" data-file-upload>
+</div>
+
+        <div class="form-message" data-form-message></div>
+        
+        <label for="message">Your Message<span style="color:var(--muted);font-weight:400"> *</span></label>
+        <div class="field" id="messageField">
+          <textarea id="message" placeholder="Describe your project, requirements, or any specific instructions." required></textarea>
+          <div id="messageOK" class="checkmark" style="display:none"><i class="fas fa-check"></i></div>
+        </div>
+        <div id="messageError" class="error-row" style="display:none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-top:2px;">
+            <path d="M11.001 7h2v6h-2z" fill="currentColor"/>
+            <path d="M11 17h2v2h-2z" fill="currentColor"/>
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="currentColor" stroke-width="0.5" fill="none"/>
+          </svg>
+          <div id="messageErrorText">Your message is required</div>
+        </div>
+
+        <button type="submit" class="create-btn" id="submitBtn" disabled>HIRE ME</button>
+      </form>
+
+      <div class="separator"></div>
+      <div class="footer">
+        <p style="margin:0;">Copyright 2025 | Edit Kart | All Rights Reserved</p>
+        <div style="margin-top:4px;">Powered by <a href="#">Edit Kart</a></div>
+      </div>
+    </div>
+  </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const countries = [
+      "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo (Brazzabuille)", "Congo (Kinshasa)", "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czechia", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Holy See", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "North Macedonia", "Norway", "Oman", "Pakistan", "Palau", "Palestine State", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States of America", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
+    ];
+
+    const categories = ["Video Editing", "Shorts & Reels Editing", "YouTube Video Editing", "Documentary Editing", "Color Grading", "Audio Cleanup", "Graphic Design", "Motion Graphics", "Other"];
+    const paymentMethods = ["PayPal", "Credit/Debit Card", "Bank Transfer", "Upi", "Crypto", "Other"];
+    
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+
+    const fullNameInput = document.getElementById('fullName');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const budgetInput = document.getElementById('budget');
+    const referenceLinkInput = document.getElementById('referenceLink');
+    const messageInput = document.getElementById('message');
+    const dynamicPaymentFieldContainer = document.getElementById('dynamicPaymentFieldContainer');
+
+    const fullNameField = document.getElementById('fullNameField');
+    const emailField = document.getElementById('emailField');
+    const phoneField = document.getElementById('phoneField');
+    const countryField = document.getElementById('countryField');
+    const categoryField = document.getElementById('categoryField');
+    const paymentField = document.getElementById('paymentField');
+    const budgetField = document.getElementById('budgetField');
+    const referenceLinkField = document.getElementById('referenceLinkField');
+    const messageField = document.getElementById('messageField');
+
+    const fullNameOK = document.getElementById('fullNameOK');
+    const emailOK = document.getElementById('emailOK');
+    const phoneOK = document.getElementById('phoneOK');
+    const countryOK = document.getElementById('countryOK');
+    const categoryOK = document.getElementById('categoryOK');
+    const paymentOK = document.getElementById('paymentOK');
+    const budgetOK = document.getElementById('budgetOK');
+    const referenceLinkOK = document.getElementById('referenceLinkOK');
+    const messageOK = document.getElementById('messageOK');
+
+    const fullNameError = document.getElementById('fullNameError');
+    const emailError = document.getElementById('emailError');
+    const phoneError = document.getElementById('phoneError');
+    const countryError = document.getElementById('countryError');
+    const categoryError = document.getElementById('categoryError');
+    const paymentError = document.getElementById('paymentError');
+    const budgetError = document.getElementById('budgetError');
+    const referenceLinkError = document.getElementById('referenceLinkError');
+    const messageError = document.getElementById('messageError');
+
+    const countryInput = document.getElementById('countryInput');
+    const countryList = document.getElementById('countryList');
+    const categoryInput = document.getElementById('categoryInput');
+    const categoryList = document.getElementById('categoryList');
+    const paymentInput = document.getElementById('paymentInput');
+    const paymentList = document.getElementById('paymentList');
+
+    const fileUploadWrapper = document.querySelector('[data-upload-wrapper]');
+    const fileInput = document.querySelector('[data-file-upload]');
+    const uploadText = document.querySelector('[data-upload-text]');
+    const dragDropIcon = document.querySelector('[data-upload-icon-drag]');
+    const uploadedIcon = document.querySelector('.file-uploaded-icon');
+    const formMessage = document.querySelector('[data-form-message]');
+
+    // New Progress Bar Elements
+    const progressBarContainer = document.querySelector('.progress-container');
+    const progressBarLabel = document.querySelector('.progress-bar-label');
+    const progressBarFill = document.querySelector('.progress-bar-fill');
+
+    let isFullNameValid = false;
+    let isEmailValid = false;
+    let isPhoneValid = true; 
+    let isCountryValid = false;
+    let isCategoryValid = false;
+    let isPaymentValid = false;
+    let isDynamicPaymentValid = true; 
+    let isBudgetValid = true; 
+    let isMessageValid = false;
+    let isFileOrLinkUploaded = false;
+    let isUploading = false; // New flag to prevent re-uploading
+
+    function resetErrorState(fieldElement, errorElement, checkmarkElement) {
+        fieldElement.classList.remove('input-error', 'input-success');
+        errorElement.style.display = 'none';
+        if (checkmarkElement) checkmarkElement.style.display = 'none';
+    }
+
+    function setErrorState(fieldElement, errorElement, errorMessage, checkmarkElement) {
+      fieldElement.classList.remove('input-success');
+      fieldElement.classList.add('input-error');
+      errorElement.style.display = 'flex';
+      errorElement.querySelector('div').textContent = errorMessage;
+      if (checkmarkElement) checkmarkElement.style.display = 'none';
+    }
+
+    function setSuccessState(fieldElement, checkmarkElement) {
+      fieldElement.classList.remove('input-error');
+      fieldElement.classList.add('input-success');
+      checkmarkElement.style.display = 'inline-flex';
+    }
+
+    function checkFormValidity() {
+      const allRequiredFieldsValid = isFullNameValid && isEmailValid && isCountryValid && isCategoryValid && isPaymentValid && isMessageValid;
+      const allOptionalFieldsValid = isPhoneValid && isBudgetValid && isDynamicPaymentValid && isFileOrLinkUploaded;
+      submitBtn.disabled = !(allRequiredFieldsValid && allOptionalFieldsValid);
+    }
+    
+    function validateFullName() {
+      const value = fullNameInput.value.trim();
+      const nameRegex = /^[a-zA-Z\s'-]*$/;
+      resetErrorState(fullNameField, fullNameError, fullNameOK);
+      if (value.length === 0) {
+        isFullNameValid = false;
+      } else if (!nameRegex.test(value)) {
+        setErrorState(fullNameField, fullNameError, 'Full Name can only contain letters and spaces', fullNameOK);
+        isFullNameValid = false;
+      } else {
+        setSuccessState(fullNameField, fullNameOK);
+        isFullNameValid = true;
+      }
+      checkFormValidity();
+    }
+
+    function validateEmail() {
+      const value = emailInput.value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      resetErrorState(emailField, emailError, emailOK);
+      if (value.length === 0) {
+        isEmailValid = false;
+      } else if (!emailRegex.test(value)) {
+        setErrorState(emailField, emailError, 'Please enter a valid email address', emailOK);
+        isEmailValid = false;
+      } else {
+        setSuccessState(emailField, emailOK);
+        isEmailValid = true;
+      }
+      checkFormValidity();
+    }
+
+    function validatePhone() {
+      const value = phoneInput.value.trim();
+      const phoneRegex = /^\+?[0-9\s\-]{7,15}$/;
+      resetErrorState(phoneField, phoneError, phoneOK);
+      isPhoneValid = value.length === 0 || phoneRegex.test(value);
+      if (isPhoneValid && value.length > 0) {
+        setSuccessState(phoneField, phoneOK);
+      } else if (!isPhoneValid) {
+        setErrorState(phoneField, phoneError, 'Please enter a valid phone number', phoneOK);
+      }
+      checkFormValidity();
+    }
+    
+    function validateCountry() {
+        isCountryValid = countryInput.value.length > 0;
+        if (isCountryValid) {
+            resetErrorState(countryField, countryError, countryOK);
+            setSuccessState(countryField, countryOK);
+        } else {
+            resetErrorState(countryField, countryError, countryOK);
+        }
+        checkFormValidity();
+    }
+
+    function validateCategory() {
+        isCategoryValid = categoryInput.value.length > 0;
+        if (isCategoryValid) {
+            resetErrorState(categoryField, categoryError, categoryOK);
+            setSuccessState(categoryField, categoryOK);
+        } else {
+            resetErrorState(categoryField, categoryError, categoryOK);
+        }
+        checkFormValidity();
+    }
+
+    function validatePayment() {
+        isPaymentValid = paymentInput.value.length > 0;
+        if (isPaymentValid) {
+            resetErrorState(paymentField, paymentError, paymentOK);
+            setSuccessState(paymentField, paymentOK);
+        } else {
+            resetErrorState(paymentField, paymentError, paymentOK);
+        }
+        checkFormValidity();
+    }
+    
+    function validateBudget() {
+        const value = budgetInput.value.trim();
+        resetErrorState(budgetField, budgetError, budgetOK);
+        isBudgetValid = value.length === 0 || (!isNaN(value) && parseFloat(value) >= 0);
+        if (isBudgetValid && value.length > 0) {
+            setSuccessState(budgetField, budgetOK);
+        } else if (!isBudgetValid) {
+            setErrorState(budgetField, budgetError, 'Please enter a valid budget amount (e.g., 500)', budgetOK);
+        }
+        checkFormValidity();
+    }
+    
+    function validateMessage() {
+      const value = messageInput.value.trim();
+      resetErrorState(messageField, messageError, messageOK);
+      if (value.length === 0) {
+        isMessageValid = false;
+      } else {
+        setSuccessState(messageField, messageOK);
+        isMessageValid = true;
+      }
+      checkFormValidity();
+    }
+    
+    function validateReferenceLink() {
+      const value = referenceLinkInput.value.trim();
+      resetErrorState(referenceLinkField, referenceLinkError, referenceLinkOK);
+      
+      let isLinkValid = false;
+      if (value.length > 0) {
+          try {
+              const url = new URL(value);
+              isLinkValid = true;
+              setSuccessState(referenceLinkField, referenceLinkOK);
+          } catch (e) {
+              setErrorState(referenceLinkField, referenceLinkError, 'Please enter a valid URL', referenceLinkOK);
+              isLinkValid = false;
+          }
+      } else {
+          isLinkValid = true;
+      }
+
+      isFileOrLinkUploaded = (isLinkValid && value.length > 0) || fileInput.files.length > 0;
+
+      checkFormValidity();
+    }
+
+    function validateDynamicPayment() {
+      const dynamicInput = dynamicPaymentFieldContainer.querySelector('input');
+      const dynamicField = dynamicPaymentFieldContainer.querySelector('.field');
+      const dynamicError = dynamicPaymentFieldContainer.querySelector('.error-row');
+      const dynamicOK = dynamicPaymentFieldContainer.querySelector('.checkmark');
+      if (!dynamicInput) {
+        isDynamicPaymentValid = true;
+        checkFormValidity();
+        return;
+      }
+
+      const value = dynamicInput.value.trim();
+      let isValid = false;
+      let errorMessage = 'This field is required';
+      const paymentMethod = paymentInput.value;
+
+      if (value.length === 0) {
+        isDynamicPaymentValid = false;
+      } else {
+        switch (paymentMethod) {
+          case 'PayPal':
+            const paypalRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            isValid = paypalRegex.test(value);
+            errorMessage = 'Please enter a valid PayPal email address';
+            break;
+          case 'Credit/Debit Card':
+            isValid = value.length > 10;
+            errorMessage = 'Please enter a valid card number';
+            break;
+          case 'Bank Transfer':
+            isValid = value.length > 5;
+            errorMessage = 'Please enter valid bank details';
+            break;
+          case 'UPI':
+            isValid = value.length > 25;
+            errorMessage = 'Please enter a valid UPI address';
+            break;
+          case 'UPI':
+            const upiRegex = /^[\w.-]+@[\w.-]+$/;
+            isValid = upiRegex.test(value);
+            errorMessage = 'Please enter a valid UPI ID (e.g. yourname@bank)';
+            break;
+          default:
+            isValid = value.length > 0;
+            break;
+        }
+        
+        resetErrorState(dynamicField, dynamicError, dynamicOK);
+        if (isValid) {
+          setSuccessState(dynamicField, dynamicOK);
+          isDynamicPaymentValid = true;
+        } else {
+          setErrorState(dynamicField, dynamicError, errorMessage, dynamicOK);
+          isDynamicPaymentValid = false;
+        }
+      }
+      checkFormValidity();
+    }
+
+    function addPaymentDetailsField(paymentMethod) {
+      dynamicPaymentFieldContainer.innerHTML = '';
+      if (['Other', 'Bank Transfer', 'PayPal', 'UPI', 'UPI'].includes(paymentMethod)) {
+        let labelText, placeholderText;
+        switch (paymentMethod) {
+            case 'PayPal':
+                labelText = 'PayPal Account';
+                placeholderText = 'Enter your PayPal email';
+                break;
+            case 'Bank Transfer':
+                labelText = 'Bank Details';
+                placeholderText = 'Enter bank account details';
+                break;
+            case 'UPI':
+                labelText = 'UPI Address';
+                placeholderText = 'Enter your UPI wallet address';
+                break;
+            case 'UPI':
+                labelText = 'UPI ID';
+                placeholderText = 'Enter your UPI ID (e.g., name@bank)';
+                break;
+            default:
+                labelText = 'Payment Details';
+                placeholderText = 'Please specify payment details';
+                break;
+        }
+
+        const newField = `
+          <label for="dynamicPaymentInput">${labelText}<span style="color:var(--muted);font-weight:400"> *</span></label>
+          <div class="field dynamic-field show" id="dynamicPaymentField">
+            <input id="dynamicPaymentInput" type="text" placeholder="${placeholderText}" required>
+            <div id="dynamicPaymentOK" class="checkmark" style="display:none"><i class="fas fa-check"></i></div>
+          </div>
+          <div id="dynamicPaymentError" class="error-row" style="display:none;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-top:2px;">
+              <path d="M11.001 7h2v6h-2z" fill="currentColor"/>
+              <path d="M11 17h2v2h-2z" fill="currentColor"/>
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="currentColor" stroke-width="0.5" fill="none"/>
+            </svg>
+            <div id="dynamicPaymentErrorText"></div>
+          </div>
+        `;
+        dynamicPaymentFieldContainer.innerHTML = newField;
+        const dynamicInput = document.getElementById('dynamicPaymentInput');
+        dynamicInput.addEventListener('blur', validateDynamicPayment);
+        isDynamicPaymentValid = false;
+      } else {
+        isDynamicPaymentValid = true;
+      }
+      checkFormValidity();
+    }
+
+    fullNameInput.addEventListener('blur', validateFullName);
+    emailInput.addEventListener('blur', validateEmail);
+    phoneInput.addEventListener('blur', validatePhone);
+    budgetInput.addEventListener('blur', validateBudget);
+    messageInput.addEventListener('blur', validateMessage);
+    referenceLinkInput.addEventListener('blur', validateReferenceLink);
+    fileInput.addEventListener('change', validateReferenceLink);
+
+    function setupDropdown(input, list, data, validationFunc, onSelectCallback = null) {
+      function populateList(filter = '') {
+        list.innerHTML = `<input type="text" class="dropdown-search" placeholder="Search...">`;
+        const searchInput = list.querySelector('.dropdown-search');
+        searchInput.value = filter;
+        searchInput.addEventListener('input', (e) => populateList(e.target.value));
+        searchInput.focus();
+
+        const fragment = document.createDocumentFragment();
+        const filteredData = data.filter(item => item.toLowerCase().includes(filter.toLowerCase()));
+        
+        filteredData.forEach(item => {
+          const listItem = document.createElement('div');
+          listItem.className = 'dropdown-list-item';
+          listItem.textContent = item;
+          listItem.addEventListener('click', () => {
+            input.value = item;
+            list.style.display = 'none';
+            if (onSelectCallback) onSelectCallback(item);
+            validationFunc();
+          });
+          fragment.appendChild(listItem);
+        });
+        list.appendChild(fragment);
+      }
+
+      input.addEventListener('click', () => {
+        list.style.display = 'block';
+        populateList();
+        const parentField = input.closest('.field');
+        if (parentField) {
+            resetErrorState(parentField, parentField.nextElementSibling, parentField.querySelector('.checkmark'));
+        }
+      });
+
+      document.addEventListener('click', function(e) {
+        const fieldContainer = input.closest('.field');
+        if (!fieldContainer.contains(e.target)) {
+          list.style.display = 'none';
+          validationFunc();
+        }
+      });
+    }
+
+    setupDropdown(countryInput, countryList, countries, validateCountry);
+    setupDropdown(categoryInput, categoryList, categories, validateCategory);
+    setupDropdown(paymentInput, paymentList, paymentMethods, validatePayment, addPaymentDetailsField);
+
+    // File Uploader Logic
+    fileUploadWrapper.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        fileUploadWrapper.style.borderColor = 'var(--accent)';
+    });
+
+    fileUploadWrapper.addEventListener('dragleave', () => {
+        fileUploadWrapper.style.borderColor = 'var(--input-border)';
+    });
+
+    fileUploadWrapper.addEventListener('drop', (e) => {
+        e.preventDefault();
+        fileUploadWrapper.style.borderColor = 'var(--input-border)';
+        if (e.dataTransfer.files.length > 0) {
+            fileInput.files = e.dataTransfer.files;
+            handleFileUpload();
+        }
+    });
+
+    fileInput.addEventListener('change', () => {
+        handleFileUpload();
+    });
+    
+    function resetFileUploadUI() {
+        dragDropIcon.style.display = 'block';
+        uploadedIcon.style.display = 'none';
+        uploadText.innerHTML = `Drag & Drop a file or <strong>Click to browse</strong>`;
+        fileUploadWrapper.classList.remove('uploading', 'disabled');
+        isUploading = false;
+        progressBarContainer.style.display = 'none';
+        progressBarFill.style.width = '0%';
+        checkFormValidity();
+    }
+
+    function formatBytes(bytes, decimals = 2) {
+      if (bytes === 0) return '0 Bytes';
+      const k = 1024;
+      const dm = decimals < 0 ? 0 : decimals;
+      const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+    }
+    
+    function handleFileUpload() {
+        const file = fileInput.files[0];
+        formMessage.style.display = 'none';
+        if (file) {
+            isUploading = true;
+            fileUploadWrapper.classList.add('uploading');
+            dragDropIcon.classList.add('animate-out');
+            uploadText.innerHTML = `Uploading <strong>${file.name}</strong> (${formatBytes(file.size)})...`;
+
+            progressBarContainer.style.display = 'block';
+            progressBarFill.style.width = '0%';
+            progressBarLabel.textContent = `0%`;
+
+            const formData = new FormData();
+            formData.append('video_file', file);
+            
+            const xhr = new XMLHttpRequest();
+            
+            xhr.upload.addEventListener('progress', (e) => {
+                if (e.lengthComputable) {
+                    const percentComplete = Math.round((e.loaded / e.total) * 100);
+                    progressBarFill.style.width = `${percentComplete}%`;
+                    progressBarLabel.textContent = `Uploading... ${percentComplete}%`;
+                }
+            });
+
+            xhr.addEventListener('load', () => {
+                fileUploadWrapper.classList.remove('uploading');
+                if (xhr.status === 200) {
+                    const result = JSON.parse(xhr.responseText);
+                    if (result.success) {
+                        uploadText.innerHTML = `File: <strong>${file.name}</strong> uploaded successfully!`;
+                        progressBarFill.style.width = '100%';
+                        progressBarLabel.textContent = `Upload Complete!`;
+                        isFileOrLinkUploaded = true;
+                        
+                        // Set the reference link with the uploaded file URL
+                        referenceLinkInput.value = result.file_url;
+                        
+                        validateReferenceLink();
+                        
+                        setTimeout(() => {
+                            dragDropIcon.style.display = 'none';
+                            uploadedIcon.style.display = 'block';
+                            uploadedIcon.classList.add('file-uploaded-icon');
+                        }, 500);
+                        
+                    } else {
+                        uploadText.innerHTML = `Upload failed. Please try again.`;
+                        formMessage.textContent = result.message || 'File upload failed.';
+                        formMessage.classList.add('error');
+                        formMessage.style.display = 'block';
+                        resetFileUploadUI();
+                    }
+                } else {
+                    uploadText.innerHTML = `Upload failed. Please try again.`;
+                    formMessage.textContent = 'File upload failed due to a server error.';
+                    formMessage.classList.add('error');
+                    formMessage.style.display = 'block';
+                    resetFileUploadUI();
+                }
+            });
+
+            xhr.addEventListener('error', () => {
+                fileUploadWrapper.classList.remove('uploading');
+                uploadText.innerHTML = `Upload failed. Please try again.`;
+                formMessage.textContent = 'File upload failed due to a network error. Please check your connection.';
+                formMessage.classList.add('error');
+                formMessage.style.display = 'block';
+                resetFileUploadUI();
+            });
+
+            xhr.open('POST', 'upload_video.php');
+            xhr.send(formData);
+        } else {
+            resetFileUploadUI();
+        }
+    }
+
+    function initializeFormState() {
+      isFullNameValid = isEmailValid = isCountryValid = isCategoryValid = isPaymentValid = isMessageValid = false;
+      isPhoneValid = isBudgetValid = isDynamicPaymentValid = true;
+      isFileOrLinkUploaded = false;
+      isUploading = false;
+      checkFormValidity();
+    }
+    initializeFormState();
+    
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      validateFullName();
+      validateEmail();
+      validatePhone();
+      validateCountry();
+      validateCategory();
+      validatePayment();
+      validateBudget();
+      validateDynamicPayment();
+      validateMessage();
+      validateReferenceLink();
+
+      if (!isCountryValid) setErrorState(countryField, countryError, 'Please select your country', countryOK);
+      if (!isCategoryValid) setErrorState(categoryField, categoryError, 'Please select a service category', categoryOK);
+      if (!isPaymentValid) setErrorState(paymentField, paymentError, 'Please select a payment method', paymentOK);
+      if (!isFileOrLinkUploaded) {
+            formMessage.textContent = 'Please upload a file or provide a reference link.';
+            formMessage.classList.add('error');
+            formMessage.classList.remove('success');
+            formMessage.style.display = 'block';
+            return;
+      }
+      
+      formMessage.style.display = 'none';
+
+      if (isFullNameValid && isEmailValid && isPhoneValid && isCountryValid && isCategoryValid && isPaymentValid && isDynamicPaymentValid && isBudgetValid && isMessageValid && isFileOrLinkUploaded) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Submitting... <i class="fas fa-spinner fa-spin"></i>';
+
+        const formData = {
+          fullName: fullNameInput.value,
+          email: emailInput.value,
+          phone: phoneInput.value,
+          country: countryInput.value,
+          category: categoryInput.value,
+          payment: paymentInput.value,
+          budget: budgetInput.value,
+          message: messageInput.value,
+          referenceLink: referenceLinkInput.value
+        };
+
+        const dynamicInput = document.getElementById('dynamicPaymentInput');
+        if (dynamicInput) {
+          formData.paymentDetails = dynamicInput.value;
+        }
+
+        try {
+          const response = await fetch('submit_form.php', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+          });
+          const result = await response.json();
+
+          if (result.success) {
+            formMessage.textContent = 'Success! Your message has been sent.';
+            formMessage.classList.add('success');
+            formMessage.classList.remove('error');
+            formMessage.style.display = 'block';
+            form.reset();
+            dynamicPaymentFieldContainer.innerHTML = '';
+            resetFileUploadUI();
+            initializeFormState();
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'Submit';
+          } else {
+            formMessage.textContent = result.message || 'Submission failed. Please try again.';
+            formMessage.classList.add('error');
+            formMessage.classList.remove('success');
+            formMessage.style.display = 'block';
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'Submit';
+          }
+        } catch (error) {
+          formMessage.textContent = 'Submission failed due to a network error. Please try again.';
+          formMessage.classList.add('error');
+          formMessage.classList.remove('success');
+          formMessage.style.display = 'block';
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = 'Submit';
+        }
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
