@@ -1,6 +1,9 @@
 # Base image: PHP 8.1 with Apache
 FROM php:8.1-apache
 
+# Install dependencies for PHP Zip extension
+RUN apt-get update && apt-get install -y libzip-dev && docker-php-ext-install zip
+
 # Enable mod_rewrite (optional, useful for routing)
 RUN a2enmod rewrite
 
